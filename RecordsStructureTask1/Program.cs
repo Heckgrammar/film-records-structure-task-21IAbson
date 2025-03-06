@@ -31,8 +31,20 @@
             // Loop through the array of films and check for the newest film
             // Produce one output to say the name of the newest film
 
-            // Write the code to update the andMan record to show the film is currently being shown
+            // Write the code to update the antMan record to show the film is currently being shown
 
+            for (int i = 0; i < filmCollection.Length; i++)
+            {
+                if (filmCollection[i].year > year || year == 0)
+                {
+                    year = filmCollection[i].year;
+                    position = i;
+                }
+            }
+            Console.WriteLine(filmCollection[position].title + " is the newest film");       //Shows the title of the newest film
+
+            filmCollection[0].beingShown = true;             //Changes Ant-man to currently being shown
+            Console.WriteLine(filmCollection[0].title + " is currently being shown? " + filmCollection[0].beingShown);
 
         }
     }
